@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyLink</title>
+    <link rel="icon" href="/favicon.ico" /> 
+    <script>
+      (function () {
+        const currentUrl = new URL(window.location.href);
+        const redirectPath = currentUrl.searchParams.get("p");
+
+        if (!redirectPath) {
+          return;
+        }
+
+        currentUrl.searchParams.delete("p");
+
+        const remainingQuery = currentUrl.searchParams.toString();
+        const separator = redirectPath.includes("?") ? "&" : "?";
+        const nextUrl = `${redirectPath}${remainingQuery ? `${separator}${remainingQuery}` : ""}`;
+
+        window.history.replaceState(null, "", nextUrl);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DDNnCeRP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-AbF3UU6w.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyLink</title>
+    <link rel="icon" href="/favicon.ico" /> 
+    <script>
+      (function () {
+        const currentUrl = new URL(window.location.href);
+        const redirectPath = currentUrl.searchParams.get("p");
+
+        if (!redirectPath) {
+          return;
+        }
+
+        currentUrl.searchParams.delete("p");
+
+        const remainingQuery = currentUrl.searchParams.toString();
+        const separator = redirectPath.includes("?") ? "&" : "?";
+        const nextUrl = `${redirectPath}${remainingQuery ? `${separator}${remainingQuery}` : ""}`;
+
+        window.history.replaceState(null, "", nextUrl);
+      })();
+      
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
