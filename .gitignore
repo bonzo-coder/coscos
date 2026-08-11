@@ -1,15 +1,14 @@
-# Dependencies
+# Node dependencies
 node_modules/
 
-# Build output
-/dist/
-/.vite/
+# Production build
+/dist
 
-# Environment files
+# Local env files
 .env
 .env.*
 
-# Logs
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -19,6 +18,48 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Editor files
+# IDE/editor metadata
 .vscode/
 .idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite cache
+/.vite
+
+# Misc
+*.log
+
+# Optional npm cache directories
+.npm
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Mac specific
+.AppleDouble
+.LSOverride
+
+# JetBrains
+out/
+
+# Build outputs
+dist/
+
+# Generated lockfiles from package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Storybook
+storybook-static/
+
+# Test coverage
+coverage/
+
+# Local env overrides
+.local
