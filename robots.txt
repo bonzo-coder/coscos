@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.costamcostam.tech/sitemap.xml
+Host: www.costamcostam.tech
